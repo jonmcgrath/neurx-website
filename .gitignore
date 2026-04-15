@@ -1,0 +1,16 @@
+# Confidential business documents — do not commit
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.doc
+*.xls
+application_draft.md
+
+# Memory files
+memory/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
