@@ -796,6 +796,30 @@
         display: block;
     }
 
+    /* Clot image */
+    .clot-image-block {
+        margin: 40px 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(8,19,42,0.1);
+        border: 1px solid var(--border);
+    }
+    .clot-image-block img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+    .clot-image-caption {
+        background: var(--white);
+        padding: 12px 20px;
+        font-size: 12px;
+        color: var(--text-lt);
+        border-top: 1px solid var(--border);
+        font-style: italic;
+    }
+
     /* ===================================================
        EVIDENCE SECTION
     =================================================== */
@@ -1004,18 +1028,30 @@
         padding: 30px 26px;
     }
 
-    .team-avatar {
-        width: 52px; height: 52px;
-        border-radius: 50%;
-        background: var(--navy);
-        color: #fff;
-        font-size: 17px;
-        font-weight: 700;
+    .team-card-header {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-        letter-spacing: -0.5px;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .team-avatar {
+        width: 100px;
+        height: 150px;
+        border-radius: 6px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    .team-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+    }
+
+    .team-info {
+        padding-top: 4px;
     }
 
     .team-name {
@@ -1031,7 +1067,7 @@
         color: var(--blue);
         text-transform: uppercase;
         letter-spacing: 0.07em;
-        margin-bottom: 14px;
+        margin-bottom: 0;
     }
 
     .team-bio {
@@ -1390,6 +1426,11 @@
             </div>
         </div>
 
+        <div class="clot-image-block reveal">
+            <img src="Clot image.png" alt="Organized adherent thrombus — residual clot after aspiration thrombectomy">
+            <div class="clot-image-caption">Organized, adherent thrombus remaining on vessel wall after aspiration — the clinical problem the NeuRx Sweeper is engineered to solve.</div>
+        </div>
+
         <div class="ceiling-block reveal">
             <div>
                 <h3>The Aspiration Ceiling</h3>
@@ -1436,10 +1477,10 @@
             <div class="market-driver">
                 <div class="driver-icon">💳</div>
                 <h4>Reimbursement Already Exists</h4>
-                <p>DRG/CPT codes 37187 and 37188 already cover percutaneous mechanical thrombectomy. The NeuRx Sweeper enters a covered indication under covered codes. No new coverage policy required. No reimbursement risk.</p>
+                <p>DRG 163-165 (PE) and 270-272 (DVT) cover inpatient VTE management. The NeuRx Sweeper enters established inpatient procedures under existing reimbursement. No new coverage policy required. No reimbursement risk.</p>
             </div>
             <div class="market-driver">
-                <div class="driver-icon">🔌</div>
+                <div class="driver-icon">🔗</div>
                 <h4>Zero Capital Equipment</h4>
                 <p>6-French profile compatible with almost all commercial aspiration systems. No capital purchase. Adoption begins on day one of commercial launch.</p>
             </div>
@@ -1481,7 +1522,7 @@
                     <div class="diff-card">
                         <div class="diff-num">02</div>
                         <div class="diff-title">True Adjunct Design</div>
-                        <div class="diff-desc">6F co-deployment alongside almost all aspiration catheters. No capital equipment. No new DRG/CPT code. Works within existing workflow and billing infrastructure.</div>
+                        <div class="diff-desc">6F co-deployment alongside almost all aspiration catheters. No capital equipment. Covered under existing DRG 163-165 (PE) and 270-272 (DVT). Works within existing workflow and billing infrastructure.</div>
                     </div>
                     <div class="diff-card">
                         <div class="diff-num">03</div>
@@ -1497,101 +1538,6 @@
             </div>
         </div>
 
-        <!-- How It Works -->
-        <h3 class="mechanism-title reveal">How the NeuRx Sweeper works.</h3>
-
-        <div class="mechanism-wrap reveal">
-            <div class="steps-sidebar">
-                <button class="step-btn active" onclick="showStep(1)">
-                    <div class="step-dot">1</div>
-                    <div class="step-btn-label">Advance beyond the clot</div>
-                </button>
-                <button class="step-btn" onclick="showStep(2)">
-                    <div class="step-dot">2</div>
-                    <div class="step-btn-label">Deploy the nitinol node</div>
-                </button>
-                <button class="step-btn" onclick="showStep(3)">
-                    <div class="step-dot">3</div>
-                    <div class="step-btn-label">Retract — apply axial traction</div>
-                </button>
-                <button class="step-btn" onclick="showStep(4)">
-                    <div class="step-dot">4</div>
-                    <div class="step-btn-label">Aspiration captures the clot</div>
-                </button>
-                <button class="step-btn" onclick="showStep(5)">
-                    <div class="step-dot">5</div>
-                    <div class="step-btn-label">Reposition or remove</div>
-                </button>
-            </div>
-
-            <div class="steps-content">
-                <!-- Fluoroscopy-style vessel animation -->
-                <div class="fluoro-demo" style="margin-bottom:28px;">
-                    <div class="fluoro-label">NeuRx Sweeper · Iliac Vein · Simulated Deployment</div>
-                    <svg class="fluoro-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Vessel walls -->
-                        <path d="M0,52 Q340,36 680,52" fill="none" stroke="rgba(120,200,120,0.55)" stroke-width="2.5"/>
-                        <path d="M0,128 Q340,144 680,128" fill="none" stroke="rgba(120,200,120,0.55)" stroke-width="2.5"/>
-                        <!-- Vessel lumen fill -->
-                        <path d="M0,54 Q340,38 680,54 L680,126 Q340,142 0,126 Z" fill="rgba(20,40,20,0.5)"/>
-                        <!-- Thrombus on wall — wrapped in group so CSS transform animates it -->
-                        <g id="clot-group" style="transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease;">
-                            <ellipse cx="360" cy="132" rx="70" ry="16" fill="rgba(160,40,40,0.85)" style="filter:blur(1px)"/>
-                            <ellipse cx="355" cy="131" rx="50" ry="11" fill="rgba(210,75,75,0.65)"/>
-                        </g>
-                        <!-- Guidewire -->
-                        <line x1="0" y1="90" x2="680" y2="90" stroke="rgba(200,200,100,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
-                        <!-- Catheter shaft — CSS translateX drives the animation -->
-                        <rect id="cath-shaft" x="0" y="84" width="380" height="12" rx="6" fill="rgba(180,160,80,0.75)" style="transform: translateX(-200px); transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);"/>
-                        <!-- Node group — CSS translate drives the animation -->
-                        <g id="node-group" style="transform: translate(450px, 90px); transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);">
-                            <!-- Collapsed (default state) -->
-                            <g id="node-collapsed">
-                                <circle cx="0" cy="0" r="7" fill="none" stroke="rgba(200,220,255,0.95)" stroke-width="2"/>
-                                <line x1="0" y1="-7" x2="0" y2="7" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
-                            </g>
-                            <!-- Deployed (hidden by default) -->
-                            <g id="node-deployed" style="display:none;">
-                                <ellipse cx="0" cy="0" rx="38" ry="32" fill="rgba(74,158,255,0.12)" stroke="rgba(200,220,255,0.9)" stroke-width="2"/>
-                                <path d="M0,-32 Q20,-10 0,32 Q-20,-10 0,-32" fill="none" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
-                                <path d="M-38,0 Q-10,20 38,0 Q-10,-20 -38,0" fill="none" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
-                            </g>
-                        </g>
-                        <!-- Aspiration catheter (left side) -->
-                        <rect id="asp-cath" x="0" y="76" width="60" height="28" rx="8" fill="rgba(60,80,120,0.85)" stroke="rgba(100,140,200,0.55)" stroke-width="1.5"/>
-                        <text x="30" y="94" text-anchor="middle" fill="rgba(120,160,255,0.95)" font-size="8" font-family="Inter, sans-serif" font-weight="600">ASPIRATION</text>
-                        <!-- Step label -->
-                        <text id="fluoro-step-label" x="340" y="168" text-anchor="middle" fill="rgba(120,200,120,0.65)" font-size="9" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.08em">STEP 1 · ADVANCE DISTAL TO THROMBUS</text>
-                    </svg>
-                </div>
-
-                <div class="step-panel active" id="step-1">
-                    <div class="step-ghost-num">01</div>
-                    <div class="step-panel-title">Advance beyond the thrombus</div>
-                    <div class="step-panel-body">With the capture node in its collapsed 6-French profile, the NeuRx Sweeper is advanced over a standard 0.035" guidewire to a position <em>distal to</em> the target thrombus — past the clot, not through it. This distal approach is critical: the capture mechanism engages from the far side of the adherent mass.</div>
-                </div>
-                <div class="step-panel" id="step-2">
-                    <div class="step-ghost-num">02</div>
-                    <div class="step-panel-title">Deploy the nitinol capture node</div>
-                    <div class="step-panel-body">A single proximal handle retraction releases the superelastic nitinol capture node, which expands radially into a conical capture geometry. The node self-sizes to circumferentially oppose the vessel wall — providing uniform contact across the full luminal diameter. A locking mechanism maintains deployment during the sweep.</div>
-                </div>
-                <div class="step-panel" id="step-3">
-                    <div class="step-ghost-num">03</div>
-                    <div class="step-panel-title">Retract — applying axial traction force</div>
-                    <div class="step-panel-body">The operator retracts the deployed catheter proximally. The expanded capture node contacts the thrombus-endothelium interface and applies direct axial mechanical traction — physically sweeping adherent organized clot from the vessel wall proximally. This force is not subject to the –730 mmHg aspiration ceiling. It is a direct mechanical contact interaction, not fluid dynamics.</div>
-                </div>
-                <div class="step-panel" id="step-4">
-                    <div class="step-ghost-num">04</div>
-                    <div class="step-panel-title">Clot delivered to aspiration</div>
-                    <div class="step-panel-body">The dislodged thrombus mass is concentrated and advanced into the aspiration lumen of the co-deployed catheter, where it is removed by conventional vacuum aspiration. The NeuRx Sweeper solves the physics problem that prevents aspiration from engaging adherent clot — then lets the aspiration system do what it does best.</div>
-                </div>
-                <div class="step-panel" id="step-5">
-                    <div class="step-ghost-num">05</div>
-                    <div class="step-panel-title">Collapse, reposition, repeat if needed</div>
-                    <div class="step-panel-body">The capture node is collapsed by advancing the inner shaft proximally. The device can be repositioned for additional passes targeting adjacent segments. Multiple passes are performed within the same procedure under existing DRG/CPT codes 37187 and 37188 — no additional billing codes, no new capital equipment, no workflow disruption.</div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -1701,39 +1647,63 @@
 
         <div class="team-grid">
             <div class="team-card reveal">
-                <div class="team-avatar">TC</div>
-                <div class="team-name">Timothy Clark</div>
-                <div class="team-role">Chief Executive Officer</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Tim Clark.png" alt="Timothy Clark"></div>
+                    <div class="team-info">
+                        <div class="team-name">Timothy Clark</div>
+                        <div class="team-role">Chief Executive Officer</div>
+                    </div>
+                </div>
                 <div class="team-bio">Medical device commercialization executive with deep experience in cardiovascular and interventional markets. Focused on building the commercial infrastructure, strategic partnerships, and investor relationships to bring the NeuRx Sweeper to market and scale.</div>
             </div>
             <div class="team-card reveal">
-                <div class="team-avatar">JM</div>
-                <div class="team-name">Jon McGrath</div>
-                <div class="team-role">Chief Operating Officer</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Jon McGrath.png" alt="Jon McGrath"></div>
+                    <div class="team-info">
+                        <div class="team-name">Jon McGrath</div>
+                        <div class="team-role">Chief Operating Officer</div>
+                    </div>
+                </div>
                 <div class="team-bio">40+ years in medical device R&amp;D. Team Lead, NIH RADx Tech — the $1.5 billion federal COVID diagnostics program. Prior CEO/President experience across multiple device companies. Drives NeuRx device development, regulatory strategy, and program execution from prototype through 510(k) submission.</div>
             </div>
             <div class="team-card reveal">
-                <div class="team-avatar">DM</div>
-                <div class="team-name">Dave Melanson</div>
-                <div class="team-role">Engineering Lead</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Dave Melanson.png" alt="Dave Melanson"></div>
+                    <div class="team-info">
+                        <div class="team-name">Dave Melanson</div>
+                        <div class="team-role">Engineering Lead</div>
+                    </div>
+                </div>
                 <div class="team-bio">Hands-on device engineering and development specialist. Deep experience in catheter-based vascular device design, bench testing, prototype iteration, and design verification for interventional cardiovascular systems.</div>
             </div>
             <div class="team-card reveal">
-                <div class="team-avatar">RL</div>
-                <div class="team-name">Ron Lamport</div>
-                <div class="team-role">Engineering Lead</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Ron Lamport.png" alt="Ron Lamport"></div>
+                    <div class="team-info">
+                        <div class="team-name">Ron Lamport</div>
+                        <div class="team-role">Engineering Lead</div>
+                    </div>
+                </div>
                 <div class="team-bio">Device engineering specialist contributing to design verification, prototype manufacturing coordination, clinical bench model development, and the systematic testing program required for 510(k) submission.</div>
             </div>
             <div class="team-card reveal">
-                <div class="team-avatar">SW</div>
-                <div class="team-name">Stephanie Whitnell</div>
-                <div class="team-role">Regulatory Affairs</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Stephanie Whitnell.png" alt="Stephanie Whitnell"></div>
+                    <div class="team-info">
+                        <div class="team-name">Stephanie Whitnell</div>
+                        <div class="team-role">Regulatory Affairs</div>
+                    </div>
+                </div>
                 <div class="team-bio">Expert in CDRH 510(k) submissions and regulatory strategy for catheter-based cardiovascular devices. Led NeuRx through the FDA pre-submission process, incorporating FDA feedback into a complete, accepted testing roadmap.</div>
             </div>
             <div class="team-card reveal">
-                <div class="team-avatar">TK</div>
-                <div class="team-name">Timothy Kitchen</div>
-                <div class="team-role">Patent Counsel</div>
+                <div class="team-card-header">
+                    <div class="team-avatar"><img src="Tim Kitchen.png" alt="Timothy Kitchen"></div>
+                    <div class="team-info">
+                        <div class="team-name">Timothy Kitchen</div>
+                        <div class="team-role">Patent Counsel</div>
+                    </div>
+                </div>
                 <div class="team-bio">Authored and prosecuted all NeuRx patent applications — 4 issued US patents, 1 issued Japanese patent, 2 pending US applications, EU prosecution ongoing. Deep experience in medical device IP strategy and competitive moat construction.</div>
             </div>
         </div>
@@ -1865,82 +1835,6 @@
         }, { threshold: 0.5 });
         chartObserver.observe(chartSection);
     }
-
-    // --- Step mechanism navigator ---
-    window.showStep = function(num) {
-        document.querySelectorAll('.step-panel').forEach(function(p) { p.classList.remove('active'); });
-        document.querySelectorAll('.step-btn').forEach(function(b) { b.classList.remove('active'); });
-        var panel = document.getElementById('step-' + num);
-        if (panel) panel.classList.add('active');
-        var btns = document.querySelectorAll('.step-btn');
-        if (btns[num - 1]) btns[num - 1].classList.add('active');
-        updateFluoro(num);
-    };
-
-    // --- Simple fluoroscopy diagram updates ---
-    // Uses CSS style.transform (not SVG setAttribute) so transitions actually animate
-    function updateFluoro(step) {
-        var shaft    = document.getElementById('cath-shaft');
-        var nodeGrp  = document.getElementById('node-group');
-        var collapsed= document.getElementById('node-collapsed');
-        var deployed = document.getElementById('node-deployed');
-        var clotGrp  = document.getElementById('clot-group');
-        var label    = document.getElementById('fluoro-step-label');
-
-        var steps = {
-            1: { shaftTx: -200, nodeTx: 450, nodeTy: 90, deploy: false, clotTx: 0,    clotOpacity: 1,
-                 lbl: 'STEP 1 · ADVANCE DISTAL TO THROMBUS' },
-            2: { shaftTx: 60,   nodeTx: 450, nodeTy: 90, deploy: true,  clotTx: 0,    clotOpacity: 1,
-                 lbl: 'STEP 2 · DEPLOY NITINOL CAPTURE NODE' },
-            3: { shaftTx: 60,   nodeTx: 310, nodeTy: 90, deploy: true,  clotTx: -50,  clotOpacity: 0.9,
-                 lbl: 'STEP 3 · RETRACT — AXIAL TRACTION APPLIED' },
-            4: { shaftTx: 60,   nodeTx: 160, nodeTy: 90, deploy: true,  clotTx: -200, clotOpacity: 0.35,
-                 lbl: 'STEP 4 · CLOT DELIVERED TO ASPIRATION LUMEN' },
-            5: { shaftTx: 60,   nodeTx: 160, nodeTy: 90, deploy: false, clotTx: -300, clotOpacity: 0,
-                 lbl: 'STEP 5 · NODE COLLAPSED — VESSEL CLEARED' }
-        };
-
-        var s = steps[step];
-        if (!s) return;
-
-        shaft.style.transform   = 'translateX(' + s.shaftTx + 'px)';
-        nodeGrp.style.transform = 'translate(' + s.nodeTx + 'px,' + s.nodeTy + 'px)';
-        clotGrp.style.transform = 'translateX(' + s.clotTx + 'px)';
-        clotGrp.style.opacity   = s.clotOpacity;
-
-        collapsed.style.display = s.deploy ? 'none' : 'block';
-        deployed.style.display  = s.deploy ? 'block' : 'none';
-
-        label.textContent = s.lbl;
-    }
-
-    // Auto-advance steps on a timer when mechanism section is in view
-    var stepTimer = null;
-    var currentAutoStep = 1;
-    var mechSection = document.querySelector('.mechanism-wrap');
-
-    if (mechSection) {
-        var mechObserver = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) {
-                if (!stepTimer) {
-                    stepTimer = setInterval(function() {
-                        currentAutoStep = (currentAutoStep % 5) + 1;
-                        window.showStep(currentAutoStep);
-                    }, 3000);
-                }
-            } else {
-                if (stepTimer) { clearInterval(stepTimer); stepTimer = null; }
-            }
-        }, { threshold: 0.4 });
-        mechObserver.observe(mechSection);
-    }
-
-    // Stop auto-advance on manual click
-    document.querySelectorAll('.step-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            if (stepTimer) { clearInterval(stepTimer); stepTimer = null; }
-        });
-    });
 
     // --- Nav active state on scroll ---
     var sections = document.querySelectorAll('section[id]');
