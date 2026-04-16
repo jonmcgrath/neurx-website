@@ -277,20 +277,20 @@
     .hero-stat:last-child { border-right: none; }
 
     .hero-stat-num {
-        font-size: 34px;
+        font-size: 52px;
         font-weight: 900;
         color: #fff;
-        letter-spacing: -1.5px;
+        letter-spacing: -2px;
         line-height: 1;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
     }
     .hero-stat-num .unit { color: var(--blue-lt); }
 
     .hero-stat-label {
-        font-size: 12.5px;
-        color: rgba(255,255,255,0.45);
+        font-size: 15px;
+        color: rgba(255,255,255,0.5);
         font-weight: 500;
-        line-height: 1.4;
+        line-height: 1.45;
     }
 
     /* ===================================================
@@ -305,12 +305,12 @@
 
     .sec-eyebrow {
         display: block;
-        font-size: 11px;
+        font-size: 16px;
         font-weight: 700;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--blue);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
 
     .sec-title {
@@ -423,14 +423,15 @@
         flex-shrink: 0;
         background: #FEE2E2;
         color: var(--red);
-        font-size: 11px;
-        font-weight: 800;
-        padding: 4px 8px;
-        border-radius: 5px;
-        min-width: 38px;
+        font-size: 44px;
+        font-weight: 900;
+        padding: 10px 18px;
+        border-radius: 10px;
+        min-width: 90px;
         text-align: center;
-        margin-top: 1px;
-        letter-spacing: 0.02em;
+        margin-top: 2px;
+        letter-spacing: -1.5px;
+        line-height: 1;
     }
 
     .consequence-list li span.txt {
@@ -568,14 +569,14 @@
     .market-driver:last-child { border-right: none; }
 
     .driver-icon {
-        width: 40px; height: 40px;
+        width: 80px; height: 80px;
         background: #EEF2FF;
-        border-radius: 10px;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 16px;
-        font-size: 18px;
+        margin-bottom: 20px;
+        font-size: 40px;
     }
 
     .market-driver h4 {
@@ -610,25 +611,16 @@
         border-radius: 20px;
         padding: 40px;
         box-shadow: 0 4px 40px rgba(8,19,42,0.07);
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        align-items: end;
     }
 
     .device-showcase img {
         width: 100%;
         border-radius: 8px;
-    }
-
-    .device-showcase .detail-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .device-showcase .detail-row img {
-        border-radius: 8px;
-        background: var(--surface);
+        display: block;
     }
 
     .diff-grid {
@@ -1070,9 +1062,10 @@
 
     .funding-tiles {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 14px;
         margin: 36px 0 40px;
+        max-width: 320px;
     }
 
     .funding-tile {
@@ -1310,14 +1303,14 @@
         <div class="hero-badge">DVT &amp; Pulmonary Embolism · Adjunct Thrombectomy</div>
 
         <h1 class="hero-headline">
-            <span class="accent">74% more clot</span><br>
+            <span class="accent">More clot</span><br>
             removed per pass.<br>
             Same procedure.<br>
             Different physics.
         </h1>
 
         <p class="hero-sub">
-            The NeuRx Sweeper removes the organized adherent thrombus that aspiration cannot — through direct axial mechanical traction, in a 6-French profile that co-deploys with any existing system, billed under existing codes.
+            The NeuRx Sweeper removes the organized adherent thrombus that aspiration alone cannot — through direct axial mechanical traction, in a 6-French profile that co-deploys with any existing system.
         </p>
 
         <div class="hero-ctas">
@@ -1339,7 +1332,7 @@
         </div>
         <div class="hero-stat">
             <div class="hero-stat-num">$400<span class="unit">M</span></div>
-            <div class="hero-stat-label">Near-term obtainable market at $3,800 per device</div>
+            <div class="hero-stat-label">Near-term obtainable market</div>
         </div>
         <div class="hero-stat">
             <div class="hero-stat-num">74<span class="unit">%</span></div>
@@ -1378,7 +1371,7 @@
             </div>
 
             <div class="problem-narrative reveal">
-                <h3>Residual clot is not a cosmetic failure. It is an independent mortality predictor.</h3>
+                <h3>Residual clot is not an angiographic failure. It is an independent mortality predictor.</h3>
                 <p>When adherent, organized thrombus is left behind after aspiration thrombectomy, the clinical consequences are severe and well-documented. Partially fibrinolyzed, cross-linked clot has fundamentally different physical properties than fresh thrombus. Vacuum aspiration cannot generate sufficient interfacial shear stress to dislodge it from the vessel endothelium — and this is a first-principles physical constraint, not an engineering gap.</p>
                 <p>Physicians accept incomplete removal because no device has been engineered specifically to solve this problem. Until now.</p>
                 <ul class="consequence-list">
@@ -1400,12 +1393,12 @@
 
         <div class="ceiling-block reveal">
             <div>
-                <h3>The –29 inHg Aspiration Ceiling</h3>
-                <p>Every commercially available thrombectomy system — Inari FlowTriever, Inari ClotTriever, Penumbra Lightning Flash, Imperative Symphony — operates on vacuum aspiration at a maximum of approximately –29 inHg. This is sufficient for soft, fresh, mobile thrombus. It is mechanically insufficient against organized, adherent clot that has undergone partial fibrinolysis and endothelial attachment. No amount of pump engineering overcomes this constraint. It is a physical law, not a design choice.</p>
+                <h3>The Aspiration Ceiling</h3>
+                <p>Every commercially available thrombectomy system operates on vacuum aspiration at a maximum of approximately –730 mmHg. This is sufficient for soft, fresh, mobile thrombus. It is mechanically insufficient against organized, adherent clot that has undergone partial fibrinolysis and endothelial attachment. No amount of pump engineering overcomes this constraint. It is a physical law, not a design choice.</p>
             </div>
             <div class="ceiling-pill">
-                <div class="ceiling-pill-num">−29</div>
-                <div class="ceiling-pill-label">inHg&nbsp;&nbsp;aspiration limit</div>
+                <div class="ceiling-pill-num">−730</div>
+                <div class="ceiling-pill-label">mmHg&nbsp;&nbsp;aspiration limit</div>
             </div>
         </div>
     </div>
@@ -1436,8 +1429,7 @@
             <div class="market-card som reveal">
                 <div class="market-card-label">Serviceable Obtainable Market</div>
                 <div class="market-card-num">$400M</div>
-                <div class="market-card-desc">~50% of active thrombectomy cases involve clinically significant adherent residual thrombus. At $3,800 per device — competitive against $10–12K standalone systems — the near-term market is $400M and growing.</div>
-                <div class="market-card-foot">$3,800 target per-device price</div>
+                <div class="market-card-desc">~50% of active thrombectomy cases involve clinically significant adherent residual thrombus. The near-term market is $400M and growing.</div>
             </div>
         </div>
 
@@ -1445,17 +1437,17 @@
             <div class="market-driver">
                 <div class="driver-icon">💳</div>
                 <h4>Reimbursement Already Exists</h4>
-                <p>CPT codes 37187 and 37188 already cover percutaneous mechanical thrombectomy. The NeuRx Sweeper enters a covered indication under covered codes. No new coverage policy required. No reimbursement risk.</p>
+                <p>DRG/CPT codes 37187 and 37188 already cover percutaneous mechanical thrombectomy. The NeuRx Sweeper enters a covered indication under covered codes. No new coverage policy required. No reimbursement risk.</p>
             </div>
             <div class="market-driver">
                 <div class="driver-icon">🔌</div>
                 <h4>Zero Capital Equipment</h4>
-                <p>6-French profile compatible with any commercial aspiration system. No capital purchase. No hospital committee approval for new hardware. Adoption begins on day one of commercial launch.</p>
+                <p>6-French profile compatible with almost all commercial aspiration systems. No capital purchase. Adoption begins on day one of commercial launch.</p>
             </div>
             <div class="market-driver">
                 <div class="driver-icon">✅</div>
                 <h4>Regulatory Path Confirmed</h4>
-                <p>510(k) pathway confirmed by FDA in writing (Q242729, October 2024). Bench and preclinical data sufficient for clearance. No clinical trial required. Major regulatory uncertainties are already resolved.</p>
+                <p>510(k) pathway confirmed by FDA. Bench and preclinical data sufficient for clearance. No clinical trial required. Major regulatory uncertainties are already resolved.</p>
             </div>
         </div>
     </div>
@@ -1467,16 +1459,14 @@
 <section id="solution">
     <div class="container">
         <span class="sec-eyebrow reveal">The Solution</span>
-        <h2 class="sec-title reveal">A different physics.<br>A different outcome.</h2>
-        <p class="sec-lead reveal">The NeuRx Sweeper is a 6-French, single-use adjunct catheter with a radially-expanding superelastic nitinol capture node. Advanced beyond the thrombus, deployed, and retracted, it applies direct axial traction — removing the clot that aspiration cannot.</p>
+        <h2 class="sec-title reveal">Different physics.<br>Different outcome.</h2>
+        <p class="sec-lead reveal">The NeuRx Sweeper is a 6-French, single-use adjunct catheter with a radially-expanding superelastic nitinol capture node. Advanced beyond the thrombus, deployed, and retracted, it applies direct axial traction — removing the clot that aspiration alone cannot.</p>
 
         <div class="solution-hero">
             <div class="device-showcase reveal">
                 <img src="Figure 1a.JPG" alt="NeuRx Sweeper — full device with handle and deployed node">
-                <div class="detail-row">
-                    <img src="Figure 1b.JPG" alt="Nitinol capture node — front view, fully deployed">
-                    <img src="Single node zoom2.JPG" alt="Nitinol capture node — lateral deployment view">
-                </div>
+                <img src="Figure 1b.JPG" alt="Nitinol capture node — front view, fully deployed">
+                <img src="Single node zoom2.JPG" alt="Nitinol capture node — lateral deployment view">
             </div>
 
             <div class="reveal">
@@ -1487,17 +1477,17 @@
                     <div class="diff-card">
                         <div class="diff-num">01</div>
                         <div class="diff-title">Axial Mechanical Traction</div>
-                        <div class="diff-desc">Not vacuum-dependent. Directly dislodges adherent organized clot via retraction force — unconstrained by the –29 inHg ceiling.</div>
+                        <div class="diff-desc">Not vacuum-dependent. Directly sweeps adherent organized clot via retraction force — unconstrained by aspiration.</div>
                     </div>
                     <div class="diff-card">
                         <div class="diff-num">02</div>
                         <div class="diff-title">True Adjunct Design</div>
-                        <div class="diff-desc">6F co-deployment alongside any aspiration catheter. No capital equipment. No new CPT code. Works within existing workflow and billing infrastructure.</div>
+                        <div class="diff-desc">6F co-deployment alongside almost all aspiration catheters. No capital equipment. No new DRG/CPT code. Works within existing workflow and billing infrastructure.</div>
                     </div>
                     <div class="diff-card">
                         <div class="diff-num">03</div>
-                        <div class="diff-title">Small Vessel Access</div>
-                        <div class="diff-desc">6F profile versus 13–16F for standalone competitors. Reaches medium-caliber vessels and segments no current system can treat.</div>
+                        <div class="diff-title">Low Profile</div>
+                        <div class="diff-desc">6F profile versus 10-16F for standalone competitors. Reaches medium-caliber vessels and segments no current system can treat.</div>
                     </div>
                     <div class="diff-card">
                         <div class="diff-num">04</div>
@@ -1541,36 +1531,38 @@
                     <div class="fluoro-label">NeuRx Sweeper · Iliac Vein · Simulated Deployment</div>
                     <svg class="fluoro-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
                         <!-- Vessel walls -->
-                        <path d="M0,52 Q340,36 680,52" fill="none" stroke="rgba(120,200,120,0.35)" stroke-width="2"/>
-                        <path d="M0,128 Q340,144 680,128" fill="none" stroke="rgba(120,200,120,0.35)" stroke-width="2"/>
+                        <path d="M0,52 Q340,36 680,52" fill="none" stroke="rgba(120,200,120,0.55)" stroke-width="2.5"/>
+                        <path d="M0,128 Q340,144 680,128" fill="none" stroke="rgba(120,200,120,0.55)" stroke-width="2.5"/>
                         <!-- Vessel lumen fill -->
                         <path d="M0,54 Q340,38 680,54 L680,126 Q340,142 0,126 Z" fill="rgba(20,40,20,0.5)"/>
-                        <!-- Thrombus on wall -->
-                        <ellipse id="clot-mass" cx="360" cy="132" rx="70" ry="16" fill="rgba(160,40,40,0.75)" style="filter:blur(1px)"/>
-                        <ellipse cx="355" cy="131" rx="50" ry="11" fill="rgba(180,60,60,0.5)"/>
+                        <!-- Thrombus on wall — wrapped in group so CSS transform animates it -->
+                        <g id="clot-group" style="transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease;">
+                            <ellipse cx="360" cy="132" rx="70" ry="16" fill="rgba(160,40,40,0.85)" style="filter:blur(1px)"/>
+                            <ellipse cx="355" cy="131" rx="50" ry="11" fill="rgba(210,75,75,0.65)"/>
+                        </g>
                         <!-- Guidewire -->
                         <line x1="0" y1="90" x2="680" y2="90" stroke="rgba(200,200,100,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
-                        <!-- Catheter shaft -->
-                        <rect id="cath-shaft" x="-200" y="84" width="380" height="12" rx="6" fill="rgba(180,160,80,0.7)"/>
-                        <!-- Node group -->
-                        <g id="node-group" transform="translate(180, 90)">
+                        <!-- Catheter shaft — CSS translateX drives the animation -->
+                        <rect id="cath-shaft" x="0" y="84" width="380" height="12" rx="6" fill="rgba(180,160,80,0.75)" style="transform: translateX(-200px); transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);"/>
+                        <!-- Node group — CSS translate drives the animation -->
+                        <g id="node-group" style="transform: translate(450px, 90px); transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);">
                             <!-- Collapsed (default state) -->
                             <g id="node-collapsed">
-                                <circle cx="0" cy="0" r="7" fill="none" stroke="rgba(200,220,255,0.8)" stroke-width="1.5"/>
-                                <line x1="0" y1="-7" x2="0" y2="7" stroke="rgba(200,220,255,0.5)" stroke-width="1"/>
+                                <circle cx="0" cy="0" r="7" fill="none" stroke="rgba(200,220,255,0.95)" stroke-width="2"/>
+                                <line x1="0" y1="-7" x2="0" y2="7" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
                             </g>
                             <!-- Deployed (hidden by default) -->
                             <g id="node-deployed" style="display:none;">
-                                <ellipse cx="0" cy="0" rx="38" ry="32" fill="none" stroke="rgba(200,220,255,0.7)" stroke-width="1.5"/>
-                                <path d="M0,-32 Q20,-10 0,32 Q-20,-10 0,-32" fill="none" stroke="rgba(200,220,255,0.5)" stroke-width="1"/>
-                                <path d="M-38,0 Q-10,20 38,0 Q-10,-20 -38,0" fill="none" stroke="rgba(200,220,255,0.5)" stroke-width="1"/>
+                                <ellipse cx="0" cy="0" rx="38" ry="32" fill="rgba(74,158,255,0.12)" stroke="rgba(200,220,255,0.9)" stroke-width="2"/>
+                                <path d="M0,-32 Q20,-10 0,32 Q-20,-10 0,-32" fill="none" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
+                                <path d="M-38,0 Q-10,20 38,0 Q-10,-20 -38,0" fill="none" stroke="rgba(200,220,255,0.65)" stroke-width="1.5"/>
                             </g>
                         </g>
                         <!-- Aspiration catheter (left side) -->
-                        <rect id="asp-cath" x="0" y="76" width="60" height="28" rx="8" fill="rgba(60,80,120,0.7)" stroke="rgba(100,140,200,0.4)" stroke-width="1"/>
-                        <text x="30" y="94" text-anchor="middle" fill="rgba(120,160,255,0.8)" font-size="8" font-family="Inter, sans-serif" font-weight="600">ASPIRATION</text>
+                        <rect id="asp-cath" x="0" y="76" width="60" height="28" rx="8" fill="rgba(60,80,120,0.85)" stroke="rgba(100,140,200,0.55)" stroke-width="1.5"/>
+                        <text x="30" y="94" text-anchor="middle" fill="rgba(120,160,255,0.95)" font-size="8" font-family="Inter, sans-serif" font-weight="600">ASPIRATION</text>
                         <!-- Step label -->
-                        <text id="fluoro-step-label" x="340" y="168" text-anchor="middle" fill="rgba(120,200,120,0.5)" font-size="9" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.08em">STEP 1 · ADVANCE DISTAL TO THROMBUS</text>
+                        <text id="fluoro-step-label" x="340" y="168" text-anchor="middle" fill="rgba(120,200,120,0.65)" font-size="9" font-family="Inter, sans-serif" font-weight="600" letter-spacing="0.08em">STEP 1 · ADVANCE DISTAL TO THROMBUS</text>
                     </svg>
                 </div>
 
@@ -1587,7 +1579,7 @@
                 <div class="step-panel" id="step-3">
                     <div class="step-ghost-num">03</div>
                     <div class="step-panel-title">Retract — applying axial traction force</div>
-                    <div class="step-panel-body">The operator retracts the deployed catheter proximally. The expanded capture node contacts the thrombus-endothelium interface and applies direct axial mechanical traction — physically dislodging adherent organized clot from the vessel wall and sweeping it proximally. This force is not subject to the –29 inHg ceiling. It is a direct mechanical contact interaction, not fluid dynamics.</div>
+                    <div class="step-panel-body">The operator retracts the deployed catheter proximally. The expanded capture node contacts the thrombus-endothelium interface and applies direct axial mechanical traction — physically sweeping adherent organized clot from the vessel wall proximally. This force is not subject to the –730 mmHg aspiration ceiling. It is a direct mechanical contact interaction, not fluid dynamics.</div>
                 </div>
                 <div class="step-panel" id="step-4">
                     <div class="step-ghost-num">04</div>
@@ -1597,7 +1589,7 @@
                 <div class="step-panel" id="step-5">
                     <div class="step-ghost-num">05</div>
                     <div class="step-panel-title">Collapse, reposition, repeat if needed</div>
-                    <div class="step-panel-body">The capture node is collapsed by advancing the inner shaft proximally. The device can be repositioned for additional passes targeting adjacent segments. Multiple passes are performed within the same procedure under existing CPT codes 37187 and 37188 — no additional billing codes, no new capital equipment, no workflow disruption.</div>
+                    <div class="step-panel-body">The capture node is collapsed by advancing the inner shaft proximally. The device can be repositioned for additional passes targeting adjacent segments. Multiple passes are performed within the same procedure under existing DRG/CPT codes 37187 and 37188 — no additional billing codes, no new capital equipment, no workflow disruption.</div>
                 </div>
             </div>
         </div>
@@ -1655,8 +1647,8 @@
                     <div class="ev-bullet-body">In vivo venous thrombosis model: complete thrombus removal achieved in under 10 minutes in all treated animals. No device-related adverse events observed. In vitro findings confirmed in a living vascular environment.</div>
                 </div>
                 <div class="ev-bullet">
-                    <div class="ev-bullet-title">FDA pre-submission complete (Q242729)</div>
-                    <div class="ev-bullet-body">510(k) pathway confirmed. No clinical trial required. Bench and preclinical data sufficient for clearance. SmartClaw (BSC, K2041207) confirmed as predicate. Testing roadmap reviewed and accepted in FDA written feedback.</div>
+                    <div class="ev-bullet-title">FDA pre-submission complete</div>
+                    <div class="ev-bullet-body">510(k) pathway confirmed. No clinical trial required. Bench and preclinical data sufficient for clearance. Predicate device confirmed by FDA. Testing roadmap reviewed and accepted.</div>
                 </div>
                 <div class="ev-bullet">
                     <div class="ev-bullet-title">Near design lock — GLP study is the final gate</div>
@@ -1670,8 +1662,8 @@
 
         <div class="ip-row reveal">
             <div class="ip-tile">
-                <div class="ip-tile-num">3+</div>
-                <div class="ip-tile-label">Issued US Patents<br>(4th issuing April 2026)</div>
+                <div class="ip-tile-num">4</div>
+                <div class="ip-tile-label">Issued US Patents</div>
             </div>
             <div class="ip-tile">
                 <div class="ip-tile-num">1</div>
@@ -1692,8 +1684,8 @@
         <div class="fda-banner reveal">
             <div class="fda-check">✓</div>
             <div>
-                <h4>FDA Pre-Submission Q242729 — October 2024</h4>
-                <p>Written FDA feedback confirmed: (1) 510(k) pathway is appropriate; (2) bench and preclinical data without a clinical study are sufficient for clearance; (3) SmartClaw (Boston Scientific, K2041207) satisfies predicate adequacy requirements for the NeuRx Sweeper. This pre-submission engagement eliminates the major regulatory uncertainties that typically remain at this development stage, and provides a complete, FDA-accepted testing roadmap for the submission.</p>
+                <h4>FDA Pre-Submission</h4>
+                <p>Written FDA feedback confirmed: (1) 510(k) pathway is appropriate; (2) bench and preclinical data without a clinical study are sufficient for clearance; (3) predicate device confirmed by FDA satisfies adequacy requirements for the NeuRx Sweeper. This pre-submission engagement eliminates the major regulatory uncertainties that typically remain at this development stage, and provides a complete, FDA-accepted testing roadmap for the submission.</p>
             </div>
         </div>
     </div>
@@ -1737,13 +1729,13 @@
                 <div class="team-avatar">SW</div>
                 <div class="team-name">Stephanie Whitnell</div>
                 <div class="team-role">Regulatory Affairs</div>
-                <div class="team-bio">Expert in CDRH 510(k) submissions and regulatory strategy for catheter-based cardiovascular devices. Led NeuRx through the FDA Q242729 pre-submission process, incorporating written FDA feedback into a complete, accepted testing roadmap.</div>
+                <div class="team-bio">Expert in CDRH 510(k) submissions and regulatory strategy for catheter-based cardiovascular devices. Led NeuRx through the FDA pre-submission process, incorporating FDA feedback into a complete, accepted testing roadmap.</div>
             </div>
             <div class="team-card reveal">
                 <div class="team-avatar">TK</div>
                 <div class="team-name">Timothy Kitchen</div>
                 <div class="team-role">Patent Counsel</div>
-                <div class="team-bio">Authored and prosecuted all NeuRx patent applications — 3 issued US patents, 1 issued Japanese patent, 2 pending US applications, EU prosecution ongoing. Deep experience in medical device IP strategy and competitive moat construction.</div>
+                <div class="team-bio">Authored and prosecuted all NeuRx patent applications — 4 issued US patents, 1 issued Japanese patent, 2 pending US applications, EU prosecution ongoing. Deep experience in medical device IP strategy and competitive moat construction.</div>
             </div>
         </div>
     </div>
@@ -1764,19 +1756,14 @@
                     <div class="funding-tile">
                         <div class="funding-tile-label">Round Size</div>
                         <div class="funding-tile-num">$4M</div>
-                        <div class="funding-tile-sub">Seed round</div>
-                    </div>
-                    <div class="funding-tile">
-                        <div class="funding-tile-label">Pre-Money Valuation</div>
-                        <div class="funding-tile-num">$9M</div>
-                        <div class="funding-tile-sub">Active due diligence underway</div>
+                        <div class="funding-tile-sub">Seed round · Active due diligence underway</div>
                     </div>
                 </div>
 
                 <div class="milestones">
                     <div class="ms-row">
                         <div class="ms-dot done"></div>
-                        <div class="ms-text"><strong>FDA pre-submission complete</strong> — 510(k) pathway confirmed in writing, no clinical trial required</div>
+                        <div class="ms-text"><strong>FDA pre-submission complete</strong> — 510(k) pathway confirmed, no clinical trial required</div>
                     </div>
                     <div class="ms-row">
                         <div class="ms-dot done"></div>
@@ -1788,7 +1775,7 @@
                     </div>
                     <div class="ms-row">
                         <div class="ms-dot done"></div>
-                        <div class="ms-text"><strong>IP portfolio secured</strong> — 3 issued US patents, 4th issuing April 2026, JP issued, EU pending</div>
+                        <div class="ms-text"><strong>IP portfolio secured</strong> — 4 issued US patents (incl. 12,605,273 issued April 2026), JP issued, EU pending</div>
                     </div>
                     <div class="ms-row">
                         <div class="ms-dot done"></div>
@@ -1892,40 +1879,35 @@
     };
 
     // --- Simple fluoroscopy diagram updates ---
+    // Uses CSS style.transform (not SVG setAttribute) so transitions actually animate
     function updateFluoro(step) {
         var shaft    = document.getElementById('cath-shaft');
         var nodeGrp  = document.getElementById('node-group');
         var collapsed= document.getElementById('node-collapsed');
         var deployed = document.getElementById('node-deployed');
-        var clot     = document.getElementById('clot-mass');
+        var clotGrp  = document.getElementById('clot-group');
         var label    = document.getElementById('fluoro-step-label');
 
         var steps = {
-            1: { shaftX: -200, nodeX: 450, nodeY: 90, deploy: false, clotX: 360, clotY: 132, clotOpacity: 0.75,
+            1: { shaftTx: -200, nodeTx: 450, nodeTy: 90, deploy: false, clotTx: 0,    clotOpacity: 1,
                  lbl: 'STEP 1 · ADVANCE DISTAL TO THROMBUS' },
-            2: { shaftX: 60,   nodeX: 450, nodeY: 90, deploy: true,  clotX: 360, clotY: 132, clotOpacity: 0.75,
+            2: { shaftTx: 60,   nodeTx: 450, nodeTy: 90, deploy: true,  clotTx: 0,    clotOpacity: 1,
                  lbl: 'STEP 2 · DEPLOY NITINOL CAPTURE NODE' },
-            3: { shaftX: 60,   nodeX: 310, nodeY: 90, deploy: true,  clotX: 310, clotY: 126, clotOpacity: 0.75,
+            3: { shaftTx: 60,   nodeTx: 310, nodeTy: 90, deploy: true,  clotTx: -50,  clotOpacity: 0.9,
                  lbl: 'STEP 3 · RETRACT — AXIAL TRACTION APPLIED' },
-            4: { shaftX: 60,   nodeX: 160, nodeY: 90, deploy: true,  clotX: 160, clotY: 120, clotOpacity: 0.4,
+            4: { shaftTx: 60,   nodeTx: 160, nodeTy: 90, deploy: true,  clotTx: -200, clotOpacity: 0.35,
                  lbl: 'STEP 4 · CLOT DELIVERED TO ASPIRATION LUMEN' },
-            5: { shaftX: 60,   nodeX: 160, nodeY: 90, deploy: false, clotX: 60,  clotY: 90,  clotOpacity: 0,
+            5: { shaftTx: 60,   nodeTx: 160, nodeTy: 90, deploy: false, clotTx: -300, clotOpacity: 0,
                  lbl: 'STEP 5 · NODE COLLAPSED — VESSEL CLEARED' }
         };
 
         var s = steps[step];
         if (!s) return;
 
-        // Animate with CSS transitions
-        shaft.style.transition    = 'x 0.6s cubic-bezier(0.4,0,0.2,1)';
-        nodeGrp.style.transition  = 'transform 0.6s cubic-bezier(0.4,0,0.2,1)';
-        clot.style.transition     = 'cx 0.6s cubic-bezier(0.4,0,0.2,1), cy 0.4s, opacity 0.4s';
-
-        shaft.setAttribute('x', s.shaftX);
-        nodeGrp.setAttribute('transform', 'translate(' + s.nodeX + ',' + s.nodeY + ')');
-        clot.setAttribute('cx', s.clotX);
-        clot.setAttribute('cy', s.clotY);
-        clot.style.opacity = s.clotOpacity;
+        shaft.style.transform   = 'translateX(' + s.shaftTx + 'px)';
+        nodeGrp.style.transform = 'translate(' + s.nodeTx + 'px,' + s.nodeTy + 'px)';
+        clotGrp.style.transform = 'translateX(' + s.clotTx + 'px)';
+        clotGrp.style.opacity   = s.clotOpacity;
 
         collapsed.style.display = s.deploy ? 'none' : 'block';
         deployed.style.display  = s.deploy ? 'block' : 'none';
