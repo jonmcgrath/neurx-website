@@ -78,6 +78,7 @@
         flex-shrink: 0;
     }
     .nav-brand .rx { color: var(--blue-lt); }
+    .nav-logo { height: 288px; width: auto; display: block; }
 
     .nav-links {
         display: flex;
@@ -156,7 +157,7 @@
     .hero-badge::before {
         content: '';
         width: 6px; height: 6px;
-        background: var(--blue-lt);
+        background: var(--red);
         border-radius: 50%;
         animation: pulse 2s ease-in-out infinite;
     }
@@ -176,6 +177,13 @@
     }
 
     .hero-headline .accent { color: var(--blue-lt); }
+
+    .hero-logo {
+        width: 400px;
+        max-width: 100%;
+        margin-bottom: 36px;
+    }
+    .hero-logo svg { display: block; width: 100%; height: auto; }
 
     .hero-sub {
         font-size: 17px;
@@ -311,6 +319,14 @@
         text-transform: uppercase;
         color: var(--blue);
         margin-bottom: 16px;
+    }
+    .sec-eyebrow::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--red);
+        margin-top: 7px;
     }
 
     .sec-title {
@@ -876,6 +892,7 @@
         letter-spacing: -0.75px;
         color: var(--navy);
     }
+    .bar-row-name.neurx { color: var(--red); font-weight: 700; }
 
     .bar-track {
         height: 32px;
@@ -901,8 +918,9 @@
 
     .pval-tag {
         display: inline-block;
-        background: #EEF2FF;
-        color: #1E5FCC;
+        background: rgba(197, 48, 48, 0.08);
+        color: var(--red);
+        border: 1px solid rgba(197, 48, 48, 0.25);
         font-size: 12px;
         font-weight: 700;
         padding: 5px 12px;
@@ -1288,7 +1306,9 @@
         color: rgba(255,255,255,0.85);
         white-space: nowrap;
     }
-    .footer-brand .rx { color: var(--blue-lt); }
+    .footer-brand .rx { color: var(--red); }
+    .footer-logo { width: 160px; flex-shrink: 0; }
+    .footer-logo svg { display: block; width: 100%; height: auto; }
 
     .footer-legal {
         font-size: 11px;
@@ -1417,7 +1437,7 @@
      NAVIGATION
 ===================================================== -->
 <nav id="main-nav">
-    <a href="#home" class="nav-brand">Neu<span class="rx">Rx</span> Medical</a>
+    <a href="#home" class="nav-brand"><img src="logo_transparent_background.png" alt="NeuRx Medical" class="nav-logo"></a>
     <ul class="nav-links">
         <li><a href="#problem">Problem</a></li>
         <li><a href="#opportunity">Opportunity</a></li>
@@ -1433,6 +1453,31 @@
 ===================================================== -->
 <section id="home">
     <div class="hero-left">
+        <div class="hero-logo">
+            <!-- Exact filled-shape paths extracted from NeuRx Medical.eps (BBox 0 0 300 90).
+                 EPS transform "1 -1 scale 0 -90 translate" means coordinates are direct SVG equivalents.
+                 Colors adapted for dark background: blue-lt / red / blue-lt instead of original process colours. -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" role="img" aria-label="NeuRx Medical">
+                <!-- Bottom blue band -->
+                <path fill="#4A9EFF" d="M103.664,56.4615 C102.247,56.4615 100.815,56.2629 99.4045,55.8591 L98.1252,55.4924 L30.8955,36.2312 C28.535,35.5569 26.0758,35.2275 23.6345,35.2214 C18.2715,35.2299 12.9379,36.8024 9.09203,39.7005 C8.15889,40.4038 7.28159,41.2253 6.48268,42.1434 L5.09432,43.7389 C3.56851,45.9893 2.75007,48.5183 2.75007,51.1665 L2.75007,64.3928 L10.3787,64.3928 L10.3787,51.1665 C10.3787,48.7352 12.0659,46.9526 13.4813,45.8845 C17.333,42.9799 23.4877,42.0468 28.7985,43.5666 L32.6202,44.6569 L98.1139,63.4318 L99.4045,63.7904 C100.815,64.1941 102.247,64.3928 103.664,64.3928 C103.98,64.3928 104.294,64.3743 104.608,64.3547 C113.709,63.6268 113.981,52.3968 113.981,52.3968 C113.613,52.7337 113.238,53.0644 112.833,53.369 C110.133,55.4049 106.934,56.4615 103.664,56.4615 Z"/>
+                <!-- Red band -->
+                <path fill="#C53030" d="M110.789,32.188 C110.777,32.1972 110.765,32.2063 110.752,32.2155 C103.882,37.3948 93.6586,39.0874 84.7045,36.5302 L15.9629,16.8243 C9.34377,14.9268 2.75,19.896 2.75,26.7817 L2.75,34.3458 C2.75,35.9947 4.63439,36.8869 5.94081,35.8808 C5.99786,35.8369 6.05524,35.7931 6.11296,35.7496 C12.9835,30.5703 23.2068,28.8777 32.1609,31.4349 L100.768,51.1022 C107.387,52.9997 113.981,48.0306 113.981,41.1448 L113.981,33.727 C113.981,32.0795 112.102,31.1932 110.789,32.188 Z"/>
+                <!-- Top blue band -->
+                <path fill="#4A9EFF" d="M106.352,16.7743 C106.352,19.2056 104.665,20.9882 103.249,22.0563 C99.3978,24.9608 93.243,25.894 87.9323,24.3741 L84.1105,23.2786 L18.6168,4.50893 L17.3262,4.15034 C15.9153,3.7466 14.4839,3.54794 13.0665,3.54794 C12.7509,3.54794 12.4369,3.56646 12.123,3.58606 C3.02221,4.31396 2.75007,15.5439 2.75007,15.5439 C3.11771,15.2071 3.49301,14.8764 3.89723,14.5718 C6.59785,12.5358 9.79672,11.4792 13.0665,11.4792 C14.4839,11.4792 15.9153,11.6779 17.3262,12.0816 L18.6168,12.4402 L85.8353,31.7095 C88.1957,32.3839 90.6549,32.7132 93.0963,32.7194 C98.4592,32.7108 103.793,31.1383 107.639,28.2402 C108.572,27.5369 109.449,26.7154 110.248,25.7973 L111.636,24.2018 C113.162,21.9515 113.981,19.4224 113.981,16.7743 L113.981,3.54794 L106.352,3.54794 Z"/>
+                <!-- NeuRx wordmark: Neu white, Rx red -->
+                <text x="127" y="39"
+                      font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif"
+                      font-size="48" font-weight="800" letter-spacing="-1">
+                    <tspan fill="#ffffff">Neu</tspan><tspan fill="#C53030">Rx</tspan>
+                </text>
+                <!-- MEDICAL: wide-tracked, semi-transparent white -->
+                <text x="127" y="63"
+                      font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif"
+                      font-size="22" font-weight="400" letter-spacing="10"
+                      fill="#ffffff" fill-opacity="0.55">MEDICAL</text>
+            </svg>
+        </div>
+
         <div class="hero-badge">DVT &amp; Pulmonary Embolism · Adjunct Thrombectomy</div>
 
         <h1 class="hero-headline">
@@ -1469,7 +1514,7 @@
         </div>
         <div class="hero-stat">
             <div class="hero-stat-num">74<span class="unit">%</span></div>
-            <div class="hero-stat-label">More clot retrieved vs. leading aspiration device (P&lt;0.0001)</div>
+            <div class="hero-stat-label">More clot retrieved vs. leading aspiration device</div>
         </div>
     </div>
 </section>
@@ -1481,7 +1526,7 @@
     <div class="container">
         <span class="sec-eyebrow reveal">The Problem</span>
         <h2 class="sec-title reveal">Aspiration has a ceiling.<br>We built what comes after it.</h2>
-        <p class="sec-lead reveal">Venous thromboembolic disease kills 100,000 Americans every year. Existing catheter systems leave organized adherent clot behind — not because of poor engineering, but because of inherent limitations to possible suction force.</p>
+        <p class="sec-lead reveal">Venous thromboembolic disease kills 100,000 Americans every year. Existing catheter systems leave organized adherent clot behind — not because of poor engineering, but because of inherent limitations to achievable suction force.</p>
 
         <div class="problem-body">
             <div class="stat-grid reveal">
@@ -1526,7 +1571,7 @@
 
         <div class="clot-image-block reveal">
             <video autoplay loop muted playsinline>
-                <source src="NeuRx Sweeper Animation.mp4" type="video/mp4">
+                <source src="NeuRx.Sweeper.Animation.mp4" type="video/mp4">
             </video>
             <div class="clot-image-caption">The NeuRx Sweeper deploying its superelastic nitinol capture node to remove organized adherent thrombus via axial mechanical traction.</div>
         </div>
@@ -1550,26 +1595,24 @@
 <section id="opportunity">
     <div class="container">
         <span class="sec-eyebrow reveal">The Opportunity</span>
-        <h2 class="sec-title reveal">A $2.2 billion market,<br>expanding at 20% CAGR.</h2>
+        <h2 class="sec-title reveal">A $2.5 billion market,<br>expanding at 20% CAGR.</h2>
         <p class="sec-lead reveal">The venous thrombectomy category is in its fastest growth period. Reimbursement is established, clinical adoption is accelerating, and the specific problem the NeuRx Sweeper solves — adherent residual clot — has no commercial answer in the market.</p>
 
         <div class="market-cards">
             <div class="market-card tam reveal">
                 <div class="market-card-label">Total Addressable Market</div>
-                <div class="market-card-num">$2.2B</div>
-                <div class="market-card-desc">~580,000 patients annually with iliofemoral DVT or ICU-level pulmonary embolism — the complete eligible population for mechanical thrombectomy in the US.</div>
-                <div class="market-card-foot">430K iliofemoral DVT + 150K ICU-level PE patients</div>
+                <div class="market-card-num">$2.5B</div>
+                <div class="market-card-desc">~650,000 patients in the US with iliofemoral DVT (285K) or admitted for PE (365K) annually.<sup>12,13,14</sup></div>
             </div>
             <div class="market-card sam reveal">
                 <div class="market-card-label">Serviceable Addressable Market</div>
-                <div class="market-card-num">$805M</div>
-                <div class="market-card-desc">~212,000 mechanical thrombectomy procedures performed in 2026, growing at 20% annually. The NeuRx Sweeper's adjunct design positions it within every active thrombectomy case.</div>
-                <div class="market-card-foot">Source: Inari FY2023 10-K + 20% CAGR</div>
+                <div class="market-card-num">$570M</div>
+                <div class="market-card-desc">~150,000 MT procedures projected to be performed in 2026, growing at 20% CAGR.<sup>3</sup></div>
             </div>
             <div class="market-card som reveal">
                 <div class="market-card-label">Serviceable Obtainable Market</div>
                 <div class="market-card-num">$400M</div>
-                <div class="market-card-desc">~50% of active thrombectomy cases involve clinically significant adherent residual thrombus. The near-term market is $400M and growing.</div>
+                <div class="market-card-desc">~70% of thrombectomy cases have been shown to have adherent thrombus remaining.<sup>9</sup></div>
             </div>
         </div>
 
@@ -1646,9 +1689,9 @@
 ===================================================== -->
 <section id="evidence">
     <div class="container">
-        <span class="sec-eyebrow reveal">Clinical Evidence</span>
+        <span class="sec-eyebrow reveal">Evidence</span>
         <h2 class="sec-title reveal">The data speaks<br>for itself.</h2>
-        <p class="sec-lead reveal">Head-to-head bench superiority against the market leader, confirmed in an acute in vivo animal model, backed by an FDA-reviewed regulatory plan. NeuRx is not claiming equivalence to existing devices — it is demonstrating superiority in the clinical scenario they fail.</p>
+        <p class="sec-lead reveal">Head-to-head bench superiority against the market leader, confirmed in an acute in vivo animal model, backed by an FDA-reviewed regulatory plan.</p>
 
         <div class="evidence-layout">
             <div class="reveal">
@@ -1659,7 +1702,7 @@
                     <div class="bar-chart-rows">
                         <div>
                             <div class="bar-row-header">
-                                <span class="bar-row-name">NeuRx Sweeper</span>
+                                <span class="bar-row-name neurx">NeuRx Sweeper</span>
                                 <span class="bar-row-val">15.5 g</span>
                             </div>
                             <div class="bar-track">
@@ -1743,7 +1786,7 @@
     <div class="container">
         <span class="sec-eyebrow reveal">The Team</span>
         <h2 class="sec-title reveal">Built by people<br>who've done this before.</h2>
-        <p class="sec-lead reveal">Deep medical device development expertise, federal program leadership, and a track record of taking hardware from concept through regulatory clearance.</p>
+        <p class="sec-lead reveal">Deep medical device development expertise, federal program leadership, and a track record of taking medical devices from concept through regulatory clearance.</p>
 
         <div class="team-grid">
             <div class="team-card reveal">
@@ -1954,7 +1997,15 @@
      FOOTER
 ===================================================== -->
 <footer>
-    <div class="footer-brand">Neu<span class="rx">Rx</span> Medical</div>
+    <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" aria-label="NeuRx Medical">
+            <path fill="#4A9EFF" d="M103.664,56.4615 C102.247,56.4615 100.815,56.2629 99.4045,55.8591 L98.1252,55.4924 L30.8955,36.2312 C28.535,35.5569 26.0758,35.2275 23.6345,35.2214 C18.2715,35.2299 12.9379,36.8024 9.09203,39.7005 C8.15889,40.4038 7.28159,41.2253 6.48268,42.1434 L5.09432,43.7389 C3.56851,45.9893 2.75007,48.5183 2.75007,51.1665 L2.75007,64.3928 L10.3787,64.3928 L10.3787,51.1665 C10.3787,48.7352 12.0659,46.9526 13.4813,45.8845 C17.333,42.9799 23.4877,42.0468 28.7985,43.5666 L32.6202,44.6569 L98.1139,63.4318 L99.4045,63.7904 C100.815,64.1941 102.247,64.3928 103.664,64.3928 C103.98,64.3928 104.294,64.3743 104.608,64.3547 C113.709,63.6268 113.981,52.3968 113.981,52.3968 C113.613,52.7337 113.238,53.0644 112.833,53.369 C110.133,55.4049 106.934,56.4615 103.664,56.4615 Z"/>
+            <path fill="#C53030" d="M110.789,32.188 C110.777,32.1972 110.765,32.2063 110.752,32.2155 C103.882,37.3948 93.6586,39.0874 84.7045,36.5302 L15.9629,16.8243 C9.34377,14.9268 2.75,19.896 2.75,26.7817 L2.75,34.3458 C2.75,35.9947 4.63439,36.8869 5.94081,35.8808 C5.99786,35.8369 6.05524,35.7931 6.11296,35.7496 C12.9835,30.5703 23.2068,28.8777 32.1609,31.4349 L100.768,51.1022 C107.387,52.9997 113.981,48.0306 113.981,41.1448 L113.981,33.727 C113.981,32.0795 112.102,31.1932 110.789,32.188 Z"/>
+            <path fill="#4A9EFF" d="M106.352,16.7743 C106.352,19.2056 104.665,20.9882 103.249,22.0563 C99.3978,24.9608 93.243,25.894 87.9323,24.3741 L84.1105,23.2786 L18.6168,4.50893 L17.3262,4.15034 C15.9153,3.7466 14.4839,3.54794 13.0665,3.54794 C12.7509,3.54794 12.4369,3.56646 12.123,3.58606 C3.02221,4.31396 2.75007,15.5439 2.75007,15.5439 C3.11771,15.2071 3.49301,14.8764 3.89723,14.5718 C6.59785,12.5358 9.79672,11.4792 13.0665,11.4792 C14.4839,11.4792 15.9153,11.6779 17.3262,12.0816 L18.6168,12.4402 L85.8353,31.7095 C88.1957,32.3839 90.6549,32.7132 93.0963,32.7194 C98.4592,32.7108 103.793,31.1383 107.639,28.2402 C108.572,27.5369 109.449,26.7154 110.248,25.7973 L111.636,24.2018 C113.162,21.9515 113.981,19.4224 113.981,16.7743 L113.981,3.54794 L106.352,3.54794 Z"/>
+            <text x="127" y="39" font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif" font-size="48" font-weight="800" letter-spacing="-1"><tspan fill="#ffffff">Neu</tspan><tspan fill="#C53030">Rx</tspan></text>
+            <text x="127" y="63" font-family="Inter,-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" font-weight="400" letter-spacing="10" fill="#ffffff" fill-opacity="0.55">MEDICAL</text>
+        </svg>
+    </div>
     <div class="footer-legal">
         © 2026 NeuRx Medical Inc. All rights reserved.<br>
         The NeuRx Sweeper is an investigational device. Not cleared for commercial sale.
