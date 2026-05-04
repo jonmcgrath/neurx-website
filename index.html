@@ -1288,6 +1288,50 @@
     }
 
     /* ===================================================
+       BIBLIOGRAPHY
+    =================================================== */
+    .bibliography {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 40px var(--pad-x);
+    }
+    .bibliography-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-lt);
+        margin-bottom: 16px;
+    }
+    .bibliography ol {
+        list-style: none;
+        counter-reset: bib;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px 40px;
+    }
+    .bibliography li {
+        counter-increment: bib;
+        font-size: 10.5px;
+        color: var(--text-lt);
+        line-height: 1.55;
+        padding-left: 20px;
+        position: relative;
+    }
+    .bibliography li::before {
+        content: counter(bib) ".";
+        position: absolute;
+        left: 0;
+        font-weight: 600;
+        color: var(--text-lt);
+    }
+    @media (max-width: 640px) {
+        .bibliography ol { grid-template-columns: 1fr; }
+    }
+
+    /* ===================================================
        FOOTER
     =================================================== */
     footer {
@@ -1933,18 +1977,6 @@
 </section>
 
 <!-- =====================================================
-     BIBLIOGRAPHY
-===================================================== -->
-<section id="bibliography">
-    <h4>References</h4>
-    <ol>
-        <li id="ref-1">Meneveau N, Ider O, Seronde MF, et al. Long-term prognostic value of residual pulmonary vascular obstruction at discharge in patients with intermediate- to high-risk pulmonary embolism. <em>Eur Heart J.</em> 2013;34(9):693–701.</li>
-        <li id="ref-2">Aziz F, Comerota AJ. Quantity of residual thrombus after successful catheter-directed thrombolysis for iliofemoral deep venous thrombosis correlates with recurrence. <em>Eur J Vasc Endovasc Surg.</em> 2012;44(2):210–213.</li>
-        <li id="ref-3">Raju S, Martin A, Davis M. The importance of IVUS assessment in venous thrombolytic regimens. <em>J Vasc Surg Venous Lymphat Disord.</em> 2014;2(2):148–154.</li>
-    </ol>
-</section>
-
-<!-- =====================================================
      DATA ROOM ACCESS MODAL
 ===================================================== -->
 <div id="dataroom-modal" role="dialog" aria-modal="true" aria-labelledby="dataroom-modal-title" style="display:none;">
@@ -1992,6 +2024,29 @@
         </div>
     </div>
 </div>
+
+<!-- =====================================================
+     BIBLIOGRAPHY
+===================================================== -->
+<section class="bibliography">
+    <div class="bibliography-title">References</div>
+    <ol>
+        <li>Martin SS, Aday AW, Allen NB et al. 2025 heart disease and stroke statistics: a report of US and global data from the American Heart Association. <em>Circulation</em> (2025) 151, e41–e660.</li>
+        <li>Freund Y, Cohen-Aubart F, Bloom B. Acute pulmonary embolism: a review. <em>JAMA</em> (2022) 328, 1336–1345.</li>
+        <li>Watson NW, Jaff MR, Carroll BJ et al. Temporal trends and practice patterns associated with utilization of catheter-based interventions for pulmonary embolism. <em>J Soc Cardiovasc Angiogr Interv</em> (2025) 4, 103736.</li>
+        <li>Kahn SR. The post-thrombotic syndrome. <em>Hematology Am Soc Hematol Educ Program</em> (2016) 2016, 413–418.</li>
+        <li>Grosse SD, Nelson RE, Nyarko KA, Richardson LC, Raskob GE. The economic burden of incident venous thromboembolism in the United States. <em>Thromb Res</em> (2016) 137, 3–10.</li>
+        <li>Jaber WA, Gonsalves CF, Stortecky S et al. Large-bore mechanical thrombectomy versus catheter-directed thrombolysis in intermediate-risk pulmonary embolism: PEERLESS trial. <em>Circulation</em> (2025) 151, 260–273.</li>
+        <li>Lookstein RA, Konstantinides SV, Weinberg I et al. Randomized controlled trial of mechanical thrombectomy with anticoagulation versus anticoagulation alone for acute intermediate-high risk pulmonary embolism: STORM-PE trial. <em>Circulation</em> (2026) 153, 21–34.</li>
+        <li>Tsukagoshi J, Wick B, Karim A, Khanipov K, Cox MW. Perioperative and intermediate outcomes of patients with pulmonary embolism undergoing catheter-directed thrombolysis vs percutaneous mechanical thrombectomy. <em>J Vasc Surg Venous Lymphat Disord</em> (2024) 12, 101958.</li>
+        <li>Raju S, Davis M, Martin A. Assessment of residual thrombus after venous thrombolytic regimens. <em>J Vasc Surg Venous Lymphat Disord</em> (2014) 2, 148–154.</li>
+        <li>Meneveau N, Ider O, Seronde MF et al. Long-term prognostic value of residual pulmonary vascular obstruction at discharge in patients with intermediate- to high-risk pulmonary embolism. <em>Eur Heart J</em> (2013) 34, 693–701.</li>
+        <li>Comerota AJ, Grewal N, Martinez JT et al. Postthrombotic morbidity correlates with residual thrombus following catheter-directed thrombolysis for iliofemoral deep vein thrombosis. <em>J Vasc Surg</em> (2012) 55, 768–773.</li>
+        <li>De Maeseneer MGR, Bochanen N, van Rooijen G, Neglén P. Analysis of 1,338 patients with acute lower limb deep venous thrombosis supports the inadequacy of the term "proximal DVT". <em>Eur J Vasc Endovasc Surg</em> (2016) 51, 415–420.</li>
+        <li>Moyer E, Bernard K, Gottlieb M. Epidemiology of deep venous thrombosis in US emergency departments during an 8-year period. <em>Clin Exp Emerg Med</em> (2025) 12, 132–138.</li>
+        <li>Gottlieb M, Moyer E, Bernard K. Epidemiology of pulmonary embolism diagnosis and management among United States emergency departments over an eight-year period. <em>Am J Emerg Med</em> (2024) 85, 158–162.</li>
+    </ol>
+</section>
 
 <!-- =====================================================
      FOOTER
